@@ -76,4 +76,11 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  #set the localhost to actual heroku domain name:
+
+  #required for Heroku : psusarla
+
+  config.action_mailer.default_url_options = { :host => 'morning-woodland-5180.herokuapp.com' }
+
 end
