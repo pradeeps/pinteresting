@@ -64,7 +64,7 @@ class PinsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
+    # Use callbacks to share common setup or constraints between actions. dummy comment to push to heroku
     def set_pin
       @pin = Pin.find(params[:id])
     end
