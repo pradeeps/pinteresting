@@ -42,4 +42,13 @@ Rails.application.configure do
   #required for Heroku : psusarla
 
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+
+
+  config.serve_static_files = true
+
+  # Paperclip config:
+Paperclip.options[:image_magick_path] = '/opt/ImageMagick/bin'
+Paperclip.options[:command_path] = '/opt/ImageMagick/bin'
+
+
 end
