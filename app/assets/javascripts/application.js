@@ -14,6 +14,8 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require data-confirm-modal
+//= require jquery.turbolinks
 //= require turbolinks
+//= require masonry/jquery.masonry
 //= require_tree .
 
