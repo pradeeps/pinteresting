@@ -1,7 +1,7 @@
 <div class="jumbotron center">
-  <h1>Welcome to my app</h1>
+  <h1>Welcome to Pinteresting/h1>
   <% if user_signed_in? %>
-  #do something
+  Cool!!! Start creating your first Pin <%= link_to 'here', new_pin_path %>
   <% else %>
   <p>
     <%= link_to "Login", new_user_session_path,class:"btn btn-default" %>
