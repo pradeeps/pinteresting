@@ -1,7 +1,8 @@
 <div class="jumbotron center">
   <h1>Welcome to Pinteresting</h1>
   <% if user_signed_in? %>
-  <p>Cool!!! Start creating your first Pin <%= link_to 'here', new_pin_path %></p>
+
+  <p>Cool <%= current_user.name %> !!! Start creating your first Pin <%= link_to 'here', new_pin_path %></p>
   <% else %>
   <p>
     <%= link_to "Login", new_user_session_path,class:"btn btn-default" %>
