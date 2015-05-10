@@ -1,6 +1,7 @@
 class PinsController < ApplicationController
   before_action :set_pin, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user! , except: [:index, :show]
+  #before_action :authenticate_user!
   before_action :correct_user , only: [:edit, :udpate, :destroy]
 
   # GET /pins
@@ -8,6 +9,8 @@ class PinsController < ApplicationController
   def index
     #@pins = Pin.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 2)
     @pins = Pin.all.order("created_at DESC").paginate(:page => params[:page])
+    
+   
   end
 
   # GET /pins/1
@@ -19,6 +22,7 @@ class PinsController < ApplicationController
   def new
     #@pin = Pin.new
     @pin = current_user.pins.build
+    #@pin = current_user.build_pin
   end
 
   # GET /pins/1/edit
@@ -30,6 +34,7 @@ class PinsController < ApplicationController
   def create
     #@pin = Pin.new(pin_params)
     @pin = current_user.pins.build(pin_params)
+    #@pin = current_user.build_pin(pin_params)
     respond_to do |format|
       if @pin.save
         format.html { redirect_to @pin, notice: 'Pin was successfully created.' }
